@@ -3,6 +3,7 @@ import AboutUs from "../../AboutUs/AboutUs";
 import Banner from "../../Banner/Banner";
 import Classes from "../../Classes/Classes";
 import ClientReview from "../../ClientReview/ClientReview";
+import Posts from "../../Posts/Posts";
 
 import FeaturedSection from "../FeaturedSection/FeaturedSection";
 
@@ -16,6 +17,7 @@ const Home = () => {
             <AboutUs></AboutUs>
             <Classes></Classes>
           <ClientReview></ClientReview>
+          <Posts></Posts>
 
         </div>
     );
