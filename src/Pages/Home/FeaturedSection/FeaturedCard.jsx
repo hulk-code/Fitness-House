@@ -8,8 +8,10 @@ const FeaturedCard = ({item}) => {
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.9 }}
   >
-            <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src={img} alt="Shoes" /></figure>
+            <div className="card w-80 bg-base-100 shadow-2xl">
+  <figure>
+    <img className="" src={img} alt="Shoes" />
+    </figure>
   <div className="card-body">
     <h2 className="text-center font-bold text-2xl">
     {category}

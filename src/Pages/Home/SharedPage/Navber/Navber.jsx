@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
+import WebTitle from "../WebTitle/WebTitle";
 
 // Home page.
 // 3. Gallery page.
@@ -35,6 +36,7 @@ const Navber = () => {
                         <img src="https://i.ibb.co/7NXm26S/gym.jpg" alt="" />
                         </div>
                     </div>
+                    <WebTitle></WebTitle>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -5,7 +5,7 @@ import FeaturedCard from "./FeaturedCard";
 
 const FeaturedSection = () => {
     const [cardData ,setFeatuedData]=useState([])
-    useEffect( () =>{
+     useEffect( () =>{
         fetch('data.json')
         .then(res =>res.json())
         .then(data=>{
@@ -16,7 +16,7 @@ const FeaturedSection = () => {
     return (
         <div>
             <Sectiontitle heading='Our Featured Items' ></Sectiontitle>
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6  items-center w-9/12 mx-auto">
              
     
                 {
