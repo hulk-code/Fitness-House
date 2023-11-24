@@ -15,9 +15,9 @@ const Classes = () => {
     },[url])
     return (
        
-        <div>
+        <div className="bg-slate-300">
              <Sectiontitle heading="Our Classes"></Sectiontitle>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-9/12 mx-auto  ">
             {
                 classes.map(item => <ClassCard key={item._id} item={item}></ClassCard>)
                 }
