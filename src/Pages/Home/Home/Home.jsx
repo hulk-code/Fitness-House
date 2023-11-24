@@ -2,6 +2,7 @@
 import AboutUs from "../../AboutUs/AboutUs";
 import Banner from "../../Banner/Banner";
 import Classes from "../../Classes/Classes";
+import ClientReview from "../../ClientReview/ClientReview";
 
 import FeaturedSection from "../FeaturedSection/FeaturedSection";
 
@@ -14,7 +15,7 @@ const Home = () => {
             <FeaturedSection></FeaturedSection>
             <AboutUs></AboutUs>
             <Classes></Classes>
-          
+          <ClientReview></ClientReview>
 
         </div>
     );

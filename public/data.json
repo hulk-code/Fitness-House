@@ -1,37 +1,26 @@
 [
-    {
-      "category": "Bodybuilding",
-      "description": "Build strength and muscle mass through resistance training.",
-      "img": "https://i.ibb.co/9H6ZXP2/pexels-pixabay-50597.jpg"
-    },
-    {
-      "category": "Yoga",
-      "description": "Improve flexibility, balance, and mental well-being through various yoga poses.",
-      "img": "https://i.ibb.co/9Y5t2nP/pexels-cottonbro-studio-4325484.jpg"
-    },
-    {
-      "category": "Cardio",
-      "description": "Enhance cardiovascular health with aerobic exercises like running and cycling.",
-      "img": "https://i.ibb.co/kqGWSNw/pexels-william-choquette-1954524.jpg"
-    },
-    {
-      "category": "Crossfit",
-      "description": "Combine various functional movements at high intensity for a full-body workout.",
-      "img": "https://i.ibb.co/p3ThM1G/pexels-jonathan-borba-3076511.jpg"
-    },
-   
-    {
-      "category": "Weightlifting",
-      "description": "Focus on lifting weights to build muscle strength and power.",
-      "img": "https://i.ibb.co/2FcMHvf/pexels-victor-freitas-2261477.jpg"
-    },
-   
-   
-    {
-      "category": "Functional Training",
-      "description": "Engage in exercises that mimic everyday movements to enhance overall fitness.",
-      "img": "https://i.ibb.co/nLYB5Lq/pexels-julia-larson-6455791.jpg"
-    }
-  
-  ]
-  
+  {
+    "img": "https://i.ibb.co/ZNkJvQC/pexels-andres-ayrton-6550868.jpg",
+    "name": "Alice Johnson",
+    "review": "I've had an amazing experience at this gym! The trainers are knowledgeable, and the atmosphere is motivating. Highly recommended.",
+    "rating": 5
+  },
+  {
+    "img": "https://i.ibb.co/g9qb36X/pexels-andres-ayrton-6551136.jpg",
+    "name": "Bob Smith",
+    "review": "Great facilities and friendly staff. The classes are diverse, and the gym equipment is top-notch. I've seen excellent results.",
+    "rating": 4
+  },
+  {
+    "img": "https://i.ibb.co/W5NKM2n/pexels-mikhail-nilov-6740711.jpg",
+    "name": "Caroline Davis",
+    "review": "I love the yoga classes here! The instructors create a peaceful environment, and it's a perfect escape from the daily hustle.",
+    "rating": 5
+  },
+  {
+    "img": "https://i.ibb.co/JRPZ4bB/pexels-antoni-shkraba-4662348.jpg",
+    "name": "David Thompson",
+    "review": "As a fitness professional, I appreciate the variety of equipment and training options available. The gym caters to all fitness levels.",
+    "rating": 4.5
+  }
+]
