@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { AiOutlineLogin } from "react-icons/ai";
 
 // Home page.
 // 3. Gallery page.
@@ -41,7 +42,7 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <a className="btn"><AiOutlineLogin />Login</a>
                 </div>
             </div>
 
