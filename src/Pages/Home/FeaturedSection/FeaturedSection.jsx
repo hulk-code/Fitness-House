@@ -1,15 +1,22 @@
 // /* eslint-disable react/prop-types */
-import Sectiontitle from "../SharedPage/SectionTitle/SectionTitle";
 import { useEffect, useState } from "react";
+import Sectiontitle from "../SharedPage/SectionTitle/SectionTitle";
+
 import FeaturedCard from "./FeaturedCard";
+import axios from "axios";
+
 
 
 const FeaturedSection = () => {
-    const [cardData ,setFeatuedData]=useState([])
-     useEffect( () =>{
-       
-      
-    },[])
+  const[featured ,setfeatured]=useState([])
+  const url=`http://localhost:5000/featured`
+  useEffect( () =>{
+    axios.get(url)
+    .then(res =>{
+        setfeatured(res.data)
+    })
+  },[url])
+     
     return (
         <div>
             <Sectiontitle heading='Our Featured Items' ></Sectiontitle>
@@ -17,7 +24,7 @@ const FeaturedSection = () => {
              
     
                 {
-                    cardData.map(item => <FeaturedCard key={item.category} item={item}></FeaturedCard>)
+                featured.map(item => <FeaturedCard key={item.category} item={item}></FeaturedCard>)
                 }
             </div>
 

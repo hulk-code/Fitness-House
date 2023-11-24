@@ -1,4 +1,5 @@
 
+import AboutUs from "../../AboutUs/AboutUs";
 import Banner from "../../Banner/Banner";
 
 import FeaturedSection from "../FeaturedSection/FeaturedSection";
@@ -10,7 +11,7 @@ const Home = () => {
         <div className="">
             <Banner></Banner>
             <FeaturedSection></FeaturedSection>
-            
+            <AboutUs></AboutUs>
           
 
         </div>
