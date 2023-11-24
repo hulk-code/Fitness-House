@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.18",
     "@preline/carousel": "^2.0.1",
+    "framer-motion": "^10.16.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "preline": "^2.0.2",
