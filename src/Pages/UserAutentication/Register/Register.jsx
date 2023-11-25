@@ -26,6 +26,65 @@ const Register = () => {
     }, []);
   
   
+    const handleRegister = e => {
+      e.preventDefault();
+      console.log(e.currentTarget);
+      const form = new FormData(e.currentTarget)
+      const displayName=form.get('displayName')
+      const photoURL=form.get('photoURL')
+      const password = form.get('password')
+      const email = form.get('email')
+      console.log(displayName ,email,password);
+  
+      if (!/(?=.*[A-Z])/.test(password)) {
+        setError('Please add at least one uppercase.');
+        return
+      }
+      else if (!/(?=.*[!@#$&*])/.test(password)) {
+        setError('Please add a special character.');
+        return
+      }
+      else if (password.length < 6) {
+        setError('Password must be 6 characters long');
+        return
+      }
+      createUser(email, password)
+        .then(result => {
+          console.log(result.user);
+          
+          
+          updateUserProfile(displayName ,photoURL)
+          .then( () =>{
+            console.log('profilee updte')
+            nevigate(location ?.state ?location.state : '/')
+          }
+          
+          )
+          .catch(error =>{
+            console.error(error);
+          })
+  
+          if (!result.user.emailVerified) {
+            setSuccess('User login successful.');
+  
+            Swal.fire({
+              
+              icon: 'success',
+              title: 'User login successful',
+              showConfirmButton: false,
+              timer: 1500
+            })
+           
+           
+            
+            setError('');
+          }
+             
+        })
+        .catch(error => {
+          console.error(error);
+        })
+    }
   return (
     <div>
      
