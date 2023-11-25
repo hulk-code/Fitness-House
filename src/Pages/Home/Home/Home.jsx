@@ -7,6 +7,7 @@ import Posts from "../../Posts/Posts";
 
 import FeaturedSection from "../FeaturedSection/FeaturedSection";
 import SubscribeNow from "../SubscribeNow/SubscribeNow";
+import TrainerProfile from "../TrainerProfile/TrainerProfile";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
           <ClientReview></ClientReview>
           <Posts></Posts>
           <SubscribeNow></SubscribeNow>
+          <TrainerProfile></TrainerProfile>
 
         </div>
     );

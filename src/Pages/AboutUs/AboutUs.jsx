@@ -6,9 +6,9 @@ import './AboutUs.css';
 
 const AboutUs = () => {
     return (
-        <div className="featured-item bg-fixed text-white pt-8 ">
+        <div className="about-us bg-fixed text-white pt-8 ">
             <Sectiontitle  heading="About US" ></Sectiontitle>
-            <div className="md:flex justify-center items-center bg-slate-500 bg-opacity-60 pb-20 pt-12 px-36">
+            <div className="md:flex justify-center items-center bg-slate-500 bg-opacity-10 pb-20 pt-12 px-36">
                 <div>
                     <img src='https://i.ibb.co/2FcMHvf/pexels-victor-freitas-2261477.jpg' alt="" />
                 </div>

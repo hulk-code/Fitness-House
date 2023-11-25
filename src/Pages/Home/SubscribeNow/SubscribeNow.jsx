@@ -2,6 +2,7 @@ import axios from "axios";
 import Sectiontitle from "../SharedPage/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form"
 import UseaxiosSecure from "../../../Hook/UseAxiousSecure/UseaxiosSecure";
+import Swal from "sweetalert2";
 
 const SubscribeNow = () => {
     const axiosSecure=UseaxiosSecure()
@@ -10,6 +11,13 @@ const SubscribeNow = () => {
         axiosSecure.post('/Subscriber', data)
             .then(res => {
                 console.log(res.data);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             })
     }
     return (

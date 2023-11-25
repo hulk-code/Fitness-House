@@ -2,12 +2,7 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
 import WebTitle from "../WebTitle/WebTitle";
 
-// Home page.
-// 3. Gallery page.
-// 4. Trainer Page.
-// 5. Classes page.
-// 6. Dashboard.
-// 7. Community/Forums page.
+
 
 const Navber = () => {
     const navLink = <>
