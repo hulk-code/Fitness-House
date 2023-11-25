@@ -13,6 +13,7 @@ import OurTrainer from "../Pages/TrainerPage/OurTrainer/OurTrainer";
 import KnowMore from "../Pages/TrainerPage/KnowMore/KnowMore";
 import BeATrainer from "../Pages/BeATrainer/BeATrainer";
 import Register from "../Pages/UserAutentication/Register/Register";
+import Login from "../Pages/UserAutentication/Login/Login";
 
   const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ import Register from "../Pages/UserAutentication/Register/Register";
         {
           path: "/register",
           element:<Register></Register> ,
+        },
+        {
+          path: "/login",
+          element:<Login></Login> ,
         },
       ],
     },
