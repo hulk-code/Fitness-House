@@ -11,6 +11,7 @@ import ReadMore from "../Pages/Posts/ReadMore/ReadMore";
 import GalleryPage from "../Pages/GalleryPage/GalleryPage";
 import OurTrainer from "../Pages/TrainerPage/OurTrainer/OurTrainer";
 import KnowMore from "../Pages/TrainerPage/KnowMore/KnowMore";
+import BeATrainer from "../Pages/BeATrainer/BeATrainer";
 
   const router = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ import KnowMore from "../Pages/TrainerPage/KnowMore/KnowMore";
         {
           path: "/knowmore/:id",
           element:<KnowMore></KnowMore> ,
+          loader:({params}) => fetch(`http://localhost:5000/instructorprofile/${params.id}`)
+        },
+        {
+          path: "/beatrainer",
+          element:<BeATrainer></BeATrainer> ,
         },
       ],
     },

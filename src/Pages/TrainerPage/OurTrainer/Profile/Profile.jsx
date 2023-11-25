@@ -1,4 +1,5 @@
 import { FaFacebookSquare,FaTwitterSquare } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Profile = ({profile}) => {
     const { _id,name,profileImage,yearsOfExperience,socialIcons,availableTimeSlots}=profile;
@@ -13,7 +14,7 @@ const Profile = ({profile}) => {
     <p className="flex text-4xl"> <FaFacebookSquare></FaFacebookSquare> <FaTwitterSquare></FaTwitterSquare></p>
      </div>
     <div className="card-actions justify-end">
-      <button onClick={`/knowmore/${_id}`} className="btn btn-primary">Know More</button>
+     <Link to={`/knowmore/${_id}`}> <button  className="btn btn-primary">Know More</button></Link>
     </div>
   </div>
 </div>
