@@ -1,6 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
 import WebTitle from "../WebTitle/WebTitle";
+import useAuth from "../../../../Hook/UseAuth/UseAuth";
+
 
 
 
@@ -12,6 +14,17 @@ const Navber = () => {
         <li><NavLink to='/classes'>Classes</NavLink></li>
         <li><NavLink to='/forums'>Forums</NavLink></li>
     </>
+      const {user , LogOut}=useAuth()
+      console.log(user);
+      const hanadleLogOut=()=>{
+          LogOut()
+          .then(result =>{
+            console.log(result);
+          })
+          .catch(error =>{
+            console.error(error);
+          })
+        }
     return (
         <div>
 
@@ -39,7 +52,23 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn"><AiOutlineLogin />Login</a>
+                {
+      user?.displayName
+     }
+       {
+        user && <div className="avatar">
+        <div className="w-6 md:w-10 lg:mr-3 lg:ml-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <img  src={user?.photoURL} alt="" />
+        </div>
+      </div>
+       }
+   {
+      user ? <button className="btn btn-ghost" onClick={hanadleLogOut} >Log Out</button> 
+      :
+      <Link to='/login'>
+  <button className="btn btn-ghost">Login <AiOutlineLogin></AiOutlineLogin></button>
+  </Link>
+    }
                 </div>
             </div>
 

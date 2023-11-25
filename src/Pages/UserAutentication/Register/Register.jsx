@@ -1,11 +1,12 @@
 
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+
 import 'aos/dist/aos.css'; 
 import AOS from 'aos';
+import useAuth from "../../../Hook/UseAuth/UseAuth";
 
 
 
@@ -13,7 +14,7 @@ import AOS from 'aos';
 
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useAuth()
   
     const [error, setError] = useState('');
     const [success, setSuccess] = useState("")
