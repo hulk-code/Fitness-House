@@ -9,6 +9,8 @@ import Root from "../Layout/Root/Root";
 import Home from "../Pages/Home/Home/Home";
 import ReadMore from "../Pages/Posts/ReadMore/ReadMore";
 import GalleryPage from "../Pages/GalleryPage/GalleryPage";
+import OurTrainer from "../Pages/TrainerPage/OurTrainer/OurTrainer";
+import KnowMore from "../Pages/TrainerPage/KnowMore/KnowMore";
 
   const router = createBrowserRouter([
     {
@@ -28,6 +30,14 @@ import GalleryPage from "../Pages/GalleryPage/GalleryPage";
         {
           path: "/galery",
           element:<GalleryPage></GalleryPage> ,
+        },
+        {
+          path: "/trainer",
+          element:<OurTrainer></OurTrainer> ,
+        },
+        {
+          path: "/knowmore/:id",
+          element:<KnowMore></KnowMore> ,
         },
       ],
     },

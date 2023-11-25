@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Sectiontitle from "../Home/SharedPage/SectionTitle/SectionTitle";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 import PostDetails from "./PostDetails/PostDetails";
 
 
