@@ -12,6 +12,7 @@ import GalleryPage from "../Pages/GalleryPage/GalleryPage";
 import OurTrainer from "../Pages/TrainerPage/OurTrainer/OurTrainer";
 import KnowMore from "../Pages/TrainerPage/KnowMore/KnowMore";
 import BeATrainer from "../Pages/BeATrainer/BeATrainer";
+import Register from "../Pages/UserAutentication/Register/Register";
 
   const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ import BeATrainer from "../Pages/BeATrainer/BeATrainer";
         {
           path: "/beatrainer",
           element:<BeATrainer></BeATrainer> ,
+        },
+        {
+          path: "/register",
+          element:<Register></Register> ,
         },
       ],
     },
