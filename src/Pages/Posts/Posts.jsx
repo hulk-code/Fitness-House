@@ -23,7 +23,7 @@ const Posts = () => {
       <div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto text-black">
         <div className="max-w-2xl">
 
-          <div className="flex justify-between items-center mb-6">
+          <div >
             {
               blogs.map(blog => <PostDetails key={blog._id} blog={blog}></PostDetails>)
             }

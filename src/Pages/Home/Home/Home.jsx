@@ -6,6 +6,7 @@ import ClientReview from "../../ClientReview/ClientReview";
 import Posts from "../../Posts/Posts";
 
 import FeaturedSection from "../FeaturedSection/FeaturedSection";
+import SubscribeNow from "../SubscribeNow/SubscribeNow";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
             <Classes></Classes>
           <ClientReview></ClientReview>
           <Posts></Posts>
+          <SubscribeNow></SubscribeNow>
 
         </div>
     );
