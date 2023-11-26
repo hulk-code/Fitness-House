@@ -8,6 +8,8 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import useAuth from "../../../Hook/UseAuth/UseAuth";
 
+import useAxiosPublic from "../../../Hook/UseAxiousPublic/UseAxiousPublic";
+
 
 
 
@@ -15,7 +17,9 @@ import useAuth from "../../../Hook/UseAuth/UseAuth";
 
 const Register = () => {
     const { createUser, updateUserProfile } = useAuth()
-  
+    const axiosPublic = useAxiosPublic();
+   
+
     const [error, setError] = useState('');
     const [success, setSuccess] = useState("")
     const location=useLocation();
@@ -57,10 +61,28 @@ const Register = () => {
           updateUserProfile(displayName ,photoURL)
           .then( () =>{
             console.log('profilee updte')
+            const userInfo = {
+              name:  displayName,
+              email: email
+          }
+          axiosPublic.post('/users', userInfo)
+          .then(res => {
+              if (res.data.insertedId) {
+                  console.log('user added to the database')
+                 
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
             nevigate(location ?.state ?location.state : '/')
           }
+        })
+      }) 
           
-          )
           .catch(error =>{
             console.error(error);
           })

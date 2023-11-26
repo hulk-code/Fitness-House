@@ -26,7 +26,7 @@ const Banner = () => {
                 <div className="title">
                     <h2 className='font-poppin text-5xl font-extrabold mb-2'>Looks For Our Classes</h2>
                     <GradientButton  variant="outlined" color="secondary">
-                       <Link to='/'>Class</Link>
+                       <Link to='/classes'>Class</Link>
                     </GradientButton>
 
                 </div>

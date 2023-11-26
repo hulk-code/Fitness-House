@@ -14,6 +14,8 @@ import KnowMore from "../Pages/TrainerPage/KnowMore/KnowMore";
 import BeATrainer from "../Pages/BeATrainer/BeATrainer";
 import Register from "../Pages/UserAutentication/Register/Register";
 import Login from "../Pages/UserAutentication/Login/Login";
+import PrivateRoute from "../Pages/UserAutentication/PrivateRoute/PrivateRoute";
+import OurClasses from "../Pages/OurClassesPage/OurClasses";
 
   const router = createBrowserRouter([
     {
@@ -45,7 +47,7 @@ import Login from "../Pages/UserAutentication/Login/Login";
         },
         {
           path: "/beatrainer",
-          element:<BeATrainer></BeATrainer> ,
+          element:<PrivateRoute><BeATrainer></BeATrainer></PrivateRoute> ,
         },
         {
           path: "/register",
@@ -55,6 +57,11 @@ import Login from "../Pages/UserAutentication/Login/Login";
           path: "/login",
           element:<Login></Login> ,
         },
+        {
+          path: "/classes",
+          element:<OurClasses></OurClasses> ,
+        },
+       
       ],
     },
   ]);
