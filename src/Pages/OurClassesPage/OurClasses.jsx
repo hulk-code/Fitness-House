@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import UseaxiosSecure from "../../Hook/UseAxiousSecure/UseaxiosSecure";
 import ClassTable from "./ClassTable/ClassTable";
+import { Link } from "react-router-dom";
+
 
 
 const OurClasses = () => {
@@ -28,8 +30,7 @@ const OurClasses = () => {
                     </tbody>
                 </table>
             </div>
-
-
+          <Link to='/addclass'>  <button className="btn btn-outline btn-success w-9/12">add_class</button></Link>
         </div>
     );
 };

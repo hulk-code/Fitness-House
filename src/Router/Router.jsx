@@ -17,6 +17,7 @@ import Login from "../Pages/UserAutentication/Login/Login";
 import PrivateRoute from "../Pages/UserAutentication/PrivateRoute/PrivateRoute";
 import OurClasses from "../Pages/OurClassesPage/OurClasses";
 import ClassDetails from "../Pages/OurClassesPage/ClassDetails/ClassDetails";
+import AddClass from "../Pages/OurClassesPage/AddClasses/AddClass";
 
   const router = createBrowserRouter([
     {
@@ -64,8 +65,13 @@ import ClassDetails from "../Pages/OurClassesPage/ClassDetails/ClassDetails";
         },
         {
           path:'/classdetails/:id',
-          element:<ClassDetails></ClassDetails>
-        }
+          element:<ClassDetails></ClassDetails>,
+          loader:({params}) => fetch(`http://localhost:5000/routine/${params.id}`)
+        },
+        {
+          path: "/addclass",
+          element:<AddClass></AddClass> ,
+        },
        
       ],
     },
