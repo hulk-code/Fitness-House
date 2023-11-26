@@ -18,6 +18,8 @@ import PrivateRoute from "../Pages/UserAutentication/PrivateRoute/PrivateRoute";
 import OurClasses from "../Pages/OurClassesPage/OurClasses";
 import ClassDetails from "../Pages/OurClassesPage/ClassDetails/ClassDetails";
 import AddClass from "../Pages/OurClassesPage/AddClasses/AddClass";
+import Pagination from "../Pages/ForumPost/Pagination/Pagination";
+
 
   const router = createBrowserRouter([
     {
@@ -71,6 +73,17 @@ import AddClass from "../Pages/OurClassesPage/AddClasses/AddClass";
         {
           path: "/addclass",
           element:<AddClass></AddClass> ,
+         
+        },
+        // {
+        //   path: "/forums",
+        //   element:<ForumPost></ForumPost> ,
+        // },
+        {
+          path: "/forums",
+          element:<Pagination></Pagination>,
+          loader:()=>fetch('http://localhost:5000/postsCount')
+
         },
        
       ],
