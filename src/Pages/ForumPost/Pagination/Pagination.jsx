@@ -62,18 +62,16 @@ const Pagination = () => {
             </div>
             <div className='pagination'>
                 <p>currentPage{currentPage}</p>
-                <button onClick={handlePrev}>Prev</button>
+                <button className='btn btn-circle bg-black text-white' onClick={handlePrev}>Prev</button>
                 {
                     pages.map(page =>
                     <button className={currentPage===page ?  'selected' :undefined} onClick={() => setCurrentPage(page)}  key={page}>{page}</button>)
                    
                 }
-                <button onClick={handleNext}> Next</button>
+                <button className='btn btn-circle bg-black text-white' onClick={handleNext}> Next</button>
                  <select name={itmesPerPage} onChange={handleParPageChange} id="">
                     <option value="6">6</option>
-                    {/* <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option> */}
+                    
                  </select>
             </div>
         </div>

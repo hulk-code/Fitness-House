@@ -13,6 +13,7 @@ const Navber = () => {
         <li><NavLink to='/trainer'>Trainer</NavLink></li>
         <li><NavLink to='/classes'>Classes</NavLink></li>
         <li><NavLink to='/forums'>Forums</NavLink></li>
+        <li><NavLink to='/dashboard/seesubscriber'>DashBoad</NavLink></li>
     </>
       const {user , LogOut}=useAuth()
       console.log(user);

@@ -19,6 +19,8 @@ import OurClasses from "../Pages/OurClassesPage/OurClasses";
 import ClassDetails from "../Pages/OurClassesPage/ClassDetails/ClassDetails";
 import AddClass from "../Pages/OurClassesPage/AddClasses/AddClass";
 import Pagination from "../Pages/ForumPost/Pagination/Pagination";
+import DashBoard from "../Layout/Root/DashBoard/DashBoard";
+import SeeAllSubscriber from "../Pages/DashBoard/SeeAllSubscriber/SeeAllSubscriber";
 
 
   const router = createBrowserRouter([
@@ -88,5 +90,19 @@ import Pagination from "../Pages/ForumPost/Pagination/Pagination";
        
       ],
     },
+
+
+    {
+         path:'/dashboard',
+         element:<DashBoard></DashBoard>,
+         children: [
+          {
+            path: "seesubscriber",
+            element:<SeeAllSubscriber></SeeAllSubscriber> ,
+          },
+
+         ]
+
+    }
   ]);
 export default router;
