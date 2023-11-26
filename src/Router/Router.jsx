@@ -16,6 +16,7 @@ import Register from "../Pages/UserAutentication/Register/Register";
 import Login from "../Pages/UserAutentication/Login/Login";
 import PrivateRoute from "../Pages/UserAutentication/PrivateRoute/PrivateRoute";
 import OurClasses from "../Pages/OurClassesPage/OurClasses";
+import ClassDetails from "../Pages/OurClassesPage/ClassDetails/ClassDetails";
 
   const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ import OurClasses from "../Pages/OurClassesPage/OurClasses";
           path: "/classes",
           element:<OurClasses></OurClasses> ,
         },
+        {
+          path:'/classdetails/:id',
+          element:<ClassDetails></ClassDetails>
+        }
        
       ],
     },
