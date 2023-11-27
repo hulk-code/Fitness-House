@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.18",
     "@preline/carousel": "^2.0.1",
-    "@tanstack/react-query": "^5.8.6",
+    "@tanstack/react-query": "^5.8.7",
     "aos": "^2.3.4",
     "axios": "^1.6.2",
     "firebase": "^10.6.0",
@@ -39,6 +39,7 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.8.4",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-react": "^4.2.0",

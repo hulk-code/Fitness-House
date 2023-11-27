@@ -21,6 +21,7 @@ import AddClass from "../Pages/OurClassesPage/AddClasses/AddClass";
 import Pagination from "../Pages/ForumPost/Pagination/Pagination";
 import DashBoard from "../Layout/Root/DashBoard/DashBoard";
 import SeeAllSubscriber from "../Pages/DashBoard/SeeAllSubscriber/SeeAllSubscriber";
+import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
 
 
   const router = createBrowserRouter([
@@ -94,11 +95,16 @@ import SeeAllSubscriber from "../Pages/DashBoard/SeeAllSubscriber/SeeAllSubscrib
 
     {
          path:'/dashboard',
-         element:<DashBoard></DashBoard>,
+         element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
          children: [
           {
             path: "seesubscriber",
             element:<SeeAllSubscriber></SeeAllSubscriber> ,
+          },
+          // admin route
+          {
+            path: "allusers",
+            element:<AllUsers></AllUsers> ,
           },
 
          ]
