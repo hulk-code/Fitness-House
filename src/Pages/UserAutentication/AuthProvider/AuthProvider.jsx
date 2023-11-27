@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 
 import app from "../../../Component/Firebase/firebase.config";
+import useAxiosPublic from "../../../Hook/UseAxiousPublic/UseAxiousPublic";
 
 
  export const AuthContext=createContext('')
@@ -14,6 +15,7 @@ const AuthProvider = ({children}) => {
     
     const googleProvider = new GoogleAuthProvider();
     const [loading ,setloading]=useState(true)
+    const axiosPublic=useAxiosPublic()
     const createUser=(email ,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
@@ -37,29 +39,32 @@ const AuthProvider = ({children}) => {
       };
 
     
-  useEffect(() =>{
-     const unSubscribe=onAuthStateChanged(auth , currentUser =>{
-    //   const userEmail = currentUser?.email || user.email;
-    //   const loggedUser = {email: userEmail}
-        setUser(currentUser)
-        setloading(false)
-        // if(currentUser){
-        //   axios.post('http://localhost:5000/jwt',loggedUser,{withCredentials: true})
-        //   .then(res =>{
-        //     console.log("Token response",res.data);
-        //   })
-        // }
-        // else{
-        //   axios.post('http://localhost:5000/logout',loggedUser,{withCredentials:true})
-        //   .then(res =>{
-        //     console.log(res.data);
-        //   })
-        // }
-     })
-     return()=>{
-        unSubscribe();
-     }
-  },[])
+      useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+          setUser(currentUser);
+          if (currentUser) {
+            const userInfo = { email: currentUser.email }
+            axiosPublic.post('/jwt', userInfo)
+              .then(res => {
+                if (res.data.token) {
+                  localStorage.setItem('access-token', res.data.token)
+                 setloading(false)
+                }
+    
+              })
+          }
+          else {
+            localStorage.removeItem('access-token')
+             setloading(false)
+          }
+          // console.log('current user' ,currentUser);
+          
+    
+        });
+        return () => {
+          return unsubscribe()
+        }
+      }, [])
     const authInfo={
         user,
         auth,

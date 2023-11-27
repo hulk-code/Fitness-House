@@ -24,7 +24,7 @@ const TrainerProfile = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 mt-10"  >
            {
             profiles.map(profile =><>
-            <div className="card w-9/12 mx-auto  bg-base-100 shadow-xl h-4/6 "  data-aos="flip-up">
+            <div key={profile._id} className="card w-9/12 mx-auto  bg-base-100 shadow-xl h-4/6 "  data-aos="flip-up">
   <figure><img  src={profile.img} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{profile.name}</h2>

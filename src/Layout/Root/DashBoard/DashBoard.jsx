@@ -1,15 +1,18 @@
 import { NavLink, Outlet } from "react-router-dom";
+import UseAdmin from "../../../Hook/UseAdmin/UseAdmin";
+import UserTrainer from "../../../Hook/Usetrainer/UserTrainer";
 
 
 const DashBoard = () => {
-    const isAdmin=true;
-    const isTrainer=true
+    const[isAdmin]=UseAdmin()
+    const[isTrainer]=UserTrainer()
+    
     return (
         <div className="flex">
             <div className="w-64  min-h-screen bg-orange-400">
                 <ul className="menu p-4 text-lg font-bold ">
                     {
-                        isAdmin?<>
+                        isAdmin? <>
                         <li className="mb-3">
                         <NavLink to='/dashboard/Adminhome'>Admin Home</NavLink>
                         </li>
@@ -30,28 +33,18 @@ const DashBoard = () => {
                         </li>
                         </>
                         :
-                        isTrainer?
-                        <>
+                        isTrainer ?<>
                         <li className="mb-3">
-                        <NavLink to='/dashboard/trainer home'>Trainer Home</NavLink>
-                        </li>
-                    <li className="mb-3">
-                        <NavLink to='/dashboard/seesubscriber'>All Subscriber</NavLink>
-                        </li>
-                    <li className="mb-3">
-                        <NavLink to='/dashboard/alltrainer'>All Trainer</NavLink>
-                        </li>
-                    <li className="mb-3">
-                        <NavLink to='/dashboard/appliedtrainer'>Applied Trainer</NavLink>
-                        </li>
-                    <li className="mb-3">
-                        <NavLink to='/dashboard/balance'>balance</NavLink>
+                        <NavLink to='/dashboard/trainerhome'>Trainer Home</NavLink>
                         </li>
                         </>
                         :
                         <>
                         <li className="mb-3">
                         <NavLink to='/dashboard/userhome'>User Home</NavLink>
+                        </li>
+                        <li className="mb-3">
+                        <NavLink to='/dashboard/activity'>Daily Activity</NavLink>
                         </li>
                    
                         </>

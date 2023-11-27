@@ -22,6 +22,13 @@ import Pagination from "../Pages/ForumPost/Pagination/Pagination";
 import DashBoard from "../Layout/Root/DashBoard/DashBoard";
 import SeeAllSubscriber from "../Pages/DashBoard/SeeAllSubscriber/SeeAllSubscriber";
 import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
+import UserActivity from "../Pages/DashBoard/UserActivity/UserActivity";
+import UserHome from "../Pages/DashBoard/UserHome/UserHome";
+import AllTrainer from "../Pages/DashBoard/AllTrainer/AllTrainer";
+import AppliedTrainer from "../Pages/DashBoard/Appliedtrainer/Appliedtrainer";
+import TrainerHome from "../Pages/DashBoard/TrainerHome/TrainerHome";
+
+
 
 
   const router = createBrowserRouter([
@@ -99,12 +106,33 @@ import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
          children: [
           {
             path: "seesubscriber",
-            element:<SeeAllSubscriber></SeeAllSubscriber> ,
+            element: <SeeAllSubscriber></SeeAllSubscriber> ,
           },
           // admin route
           {
             path: "allusers",
             element:<AllUsers></AllUsers> ,
+          },
+
+          {
+            path: "userhome",
+            element:<UserHome></UserHome> ,
+          },
+          {
+            path: "activity",
+            element:<UserActivity></UserActivity> ,
+          },
+          {
+            path: "alltrainer",
+            element:<AllTrainer></AllTrainer>
+          },
+          {
+            path: "appliedtrainer",
+            element:<AppliedTrainer></AppliedTrainer>
+          },
+          {
+            path: "trainerhome",
+            element:<TrainerHome></TrainerHome>
           },
 
          ]

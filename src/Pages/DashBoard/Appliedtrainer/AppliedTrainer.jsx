@@ -6,18 +6,18 @@ import Swal from "sweetalert2";
 
 
 
-const AllUsers = () => {
+const AppliedTrainer = () => {
     const axiosSecure=UseaxiosSecure()
    
     const{data : users=[] ,refetch}=useQuery({
         queryKey:['users'],
         queryFn:async () =>{
-            const res= await axiosSecure.get('/users', );
+            const res= await axiosSecure.get('/beatrainer', );
             return res.data;
         }
     })
     const handleMakeUser=user=>{
-        axiosSecure.patch(`/users/admin/${user._id}`)
+        axiosSecure.patch(`/beatrainer/trainer/${user._id}`)
         .then(res =>{
             console.log(res.data)
             if(res.data.modifiedCount >0){
@@ -25,7 +25,7 @@ const AllUsers = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title:`${user.name} admin created`,
+                    title:`${user.name} trainer created`,
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -56,9 +56,10 @@ const AllUsers = () => {
             {
                 users.map(user =><tr key={user._id}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{user.name}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{user.email}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">45</td>
                     <td>
-       { user.role ==='admin' ?'admin' :
+       { user.role ==='trainer' ?'trainer' :
        
        <button onClick={() => handleMakeUser(user)} className="btn btn-ghost btn-xs text-2xl"><FaUser></FaUser></button>}
         </td>
@@ -83,4 +84,4 @@ const AllUsers = () => {
     );
 };
 
-export default AllUsers;
+export default AppliedTrainer;
