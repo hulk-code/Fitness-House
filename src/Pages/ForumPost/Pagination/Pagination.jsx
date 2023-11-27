@@ -70,7 +70,9 @@ const Pagination = () => {
                 }
                 <button className='btn btn-circle bg-black text-white' onClick={handleNext}> Next</button>
                  <select name={itmesPerPage} onChange={handleParPageChange} id="">
-                    <option value="6">6</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="25">25</option>
                     
                  </select>
             </div>

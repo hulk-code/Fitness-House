@@ -10,7 +10,7 @@ import Sectiontitle from "../../Home/SharedPage/SectionTitle/SectionTitle";
 
 
 
-const AddClass = () => {
+const AddForum = () => {
     const { register, handleSubmit, reset } = useForm();
    
     const axiosSecure = UseaxiosSecure();
@@ -21,16 +21,16 @@ const AddClass = () => {
        
        
          
-            const userInfo = {
-                classname: data.classname,
-                classdetails: data.email,
+            const postInfo = {
+                question: data.question,
+                answer: data.answer,
                 
-                time: parseFloat(data.time),
+                author:data.author,
              
             
             }
             // 
-            const menuRes = await axiosSecure.post('/routine', userInfo);
+            const menuRes = await axiosSecure.post('/posts', postInfo);
             console.log(menuRes.data)
             if(menuRes.data.insertedId){
                 // show success popup
@@ -54,25 +54,25 @@ const AddClass = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full my-6">
                         <label className="label">
-                            <span className="label-text">Class Name</span>
+                            <span className="label-text">Author Name</span>
                         </label>
                         <input
                             type="text"
-                            placeholder="ClassName"
-                            {...register('classname', { required: true })}
+                            placeholder="AuthorName"
+                            {...register('author', { required: true })}
                             required
                             className="input input-bordered w-full" />
                     </div>
                     <div className="form-control w-full my-6">
                         <label className="label">
-                            <span className="label-text">Class Details</span>
+                            <span className="label-text">Question</span>
                         </label>
                         <input
                             type="text"
                            
                            
-                            placeholder="Details"
-                            {...register('details', { required: true })}
+                            placeholder="Question"
+                            {...register('question', { required: true })}
                             required
                             className="input input-bordered w-full" />
                     </div>
@@ -83,23 +83,17 @@ const AddClass = () => {
                   
                     <div >
                         
-                        <div className="form-control w-full my-6">
-                            <label className="label">
-                                <span className="label-text">Time</span>
-                            </label>
-                            <input
-                                type="number"
-                                placeholder="Time"
-                                {...register('time', { required: true })}
-                                className="input input-bordered w-full" />
-                        </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Answer</span>
+                        </label>
+                        <textarea  {...register('answer')} className="textarea textarea-bordered h-24" placeholder="Answer"></textarea>
+                    </div>
 
-                        
-                       
                     </div>
                   
                     <button className="btn">
-                        Add Class<FaUtensils></FaUtensils>
+                        Add forum<FaUtensils></FaUtensils>
                     </button>
                 </form>
             </div>
@@ -107,6 +101,8 @@ const AddClass = () => {
     );
 };
 
-export default AddClass;
+export default AddForum;
+
+
 
 

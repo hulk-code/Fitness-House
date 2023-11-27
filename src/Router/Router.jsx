@@ -27,6 +27,7 @@ import UserHome from "../Pages/DashBoard/UserHome/UserHome";
 import AllTrainer from "../Pages/DashBoard/AllTrainer/AllTrainer";
 import AppliedTrainer from "../Pages/DashBoard/Appliedtrainer/Appliedtrainer";
 import TrainerHome from "../Pages/DashBoard/TrainerHome/TrainerHome";
+import AddForum from "../Pages/DashBoard/AddForum/AddForum";
 
 
 
@@ -133,6 +134,10 @@ import TrainerHome from "../Pages/DashBoard/TrainerHome/TrainerHome";
           {
             path: "trainerhome",
             element:<TrainerHome></TrainerHome>
+          },
+          {
+            path: "addforum",
+            element:<AddForum></AddForum>
           },
 
          ]

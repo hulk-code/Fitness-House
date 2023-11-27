@@ -29,6 +29,9 @@ const DashBoard = () => {
                         <NavLink to='/dashboard/appliedtrainer'>Applied Trainer</NavLink>
                         </li>
                     <li className="mb-3">
+                        <NavLink to='/dashboard/addforum'>Add Forum</NavLink>
+                        </li>
+                    <li className="mb-3">
                         <NavLink to='/dashboard/balance'>balance</NavLink>
                         </li>
                         </>
@@ -36,6 +39,9 @@ const DashBoard = () => {
                         isTrainer ?<>
                         <li className="mb-3">
                         <NavLink to='/dashboard/trainerhome'>Trainer Home</NavLink>
+                        </li>
+                        <li className="mb-3">
+                        <NavLink to='/dashboard/addforum'>Add Forum</NavLink>
                         </li>
                         </>
                         :
