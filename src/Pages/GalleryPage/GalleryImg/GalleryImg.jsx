@@ -14,10 +14,10 @@ const InfiniteImageScroll = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint that provides image data
+       
         const response = await axios.get('/public/data.json');
 
-        // Simulate initial images
+       
         setImages(response.data.slice(0, 12));
         setLoading(false);
       } catch (error) {
@@ -31,15 +31,15 @@ const InfiniteImageScroll = () => {
 
   const fetchMoreImages = async () => {
     try {
-      // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint that provides more image data
+     
       const response = await axios.get('/public/data.json');
 
-      // Simulate no more images after a certain point
+     
       if (images.length + response.data.length >= 30) {
         setHasMore(false);
       }
 
-      // Concatenate the new images to the existing ones
+      
       setImages((prevImages) => [...prevImages, ...response.data]);
     } catch (error) {
       console.error('Error fetching more image data:', error);
@@ -59,7 +59,7 @@ const InfiniteImageScroll = () => {
             <LazyLoadImage
               alt={`Image ${index}`}
               height="200"
-              src={image.url} // Assuming the API response has a 'url' property for the image
+              src={image.url} 
               effect="opacity"
               threshold={100}
               style={{ transition: 'opacity 0.5s' }}

@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import UseaxiosSecure from "../../../Hook/UseAxiousSecure/UseaxiosSecure";
 import Sectiontitle from "../../Home/SharedPage/SectionTitle/SectionTitle";
-
+import {   Link } from 'react-router-dom';
 
 
 const AllTrainer = () => {
     const [profiles, setProfiles] = useState([])
     const axiosSecure = UseaxiosSecure()
+  
+
+    const calculateTotalPay = (profile) => {
+        return profile.salary * profile.workingmonth;
+    };
     useEffect(() => {
         axiosSecure.get('/instructorprofile')
             .then(res => {
                 setProfiles(res.data)
             })
     }, [])
+    
     return (
         <div>
 
@@ -46,10 +52,13 @@ const AllTrainer = () => {
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{profile.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{profile.workingmonth}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{profile.salary}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{profile.salary * profile.workingmonth}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"> {calculateTotalPay(profile)}</td>
 
                                             <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                <button className="btn btn-circle">Pay</button>
+                                            <Link to={`/payment/${profile._id}/${calculateTotalPay(profile)}`} className="btn btn-circle">
+                Pay
+              </Link>
+
 
                                             </td>
                                         </tr>)

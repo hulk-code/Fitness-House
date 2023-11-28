@@ -52,6 +52,12 @@ const DashBoard = () => {
                         <li className="mb-3">
                         <NavLink to='/dashboard/activity'>Daily Activity</NavLink>
                         </li>
+                        <li className="mb-3">
+                        <NavLink to='/dashboard/updateprofile'>Update Profile</NavLink>
+                        </li>
+                        <li className="mb-3">
+                        <NavLink to='/dashboard/Recommendedclasses'>Recommended Classes</NavLink>
+                        </li>
                    
                         </>
                     }

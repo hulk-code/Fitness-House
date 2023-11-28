@@ -28,6 +28,9 @@ import AllTrainer from "../Pages/DashBoard/AllTrainer/AllTrainer";
 import AppliedTrainer from "../Pages/DashBoard/Appliedtrainer/Appliedtrainer";
 import TrainerHome from "../Pages/DashBoard/TrainerHome/TrainerHome";
 import AddForum from "../Pages/DashBoard/AddForum/AddForum";
+import Payment from "../Pages/DashBoard/Payment/Payment";
+import UpdateProfile from "../Pages/DashBoard/UpdateProfile/UpdateProfile";
+import RecomandedClass from "../Pages/DashBoard/RecomandedClass/RecomandedClass";
 
 
 
@@ -138,6 +141,18 @@ import AddForum from "../Pages/DashBoard/AddForum/AddForum";
           {
             path: "addforum",
             element:<AddForum></AddForum>
+          },
+          {
+            path: "payment/:id/:totalPay",
+            element:<Payment></Payment>
+          },
+          {
+            path: "updateprofile",
+            element:<UpdateProfile></UpdateProfile>
+          },
+          {
+            path: "Recommendedclasses",
+            element:<RecomandedClass></RecomandedClass>
           },
 
          ]
