@@ -148,7 +148,9 @@ import RecomandedClass from "../Pages/DashBoard/RecomandedClass/RecomandedClass"
           },
           {
             path: "updateprofile",
-            element:<UpdateProfile></UpdateProfile>
+            element:<UpdateProfile></UpdateProfile>,
+            // loader:({params}) => fetch(`http://localhost:5000/users/${params.id}`)
+
           },
           {
             path: "Recommendedclasses",

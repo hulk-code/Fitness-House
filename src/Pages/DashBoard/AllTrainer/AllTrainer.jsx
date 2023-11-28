@@ -12,6 +12,7 @@ const AllTrainer = () => {
     const calculateTotalPay = (profile) => {
         return profile.salary * profile.workingmonth;
     };
+    
     useEffect(() => {
         axiosSecure.get('/instructorprofile')
             .then(res => {

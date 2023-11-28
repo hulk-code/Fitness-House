@@ -43,7 +43,13 @@ const Footer = () => {
       <Typography variant="body2" align="center" color="inherit" style={{ marginTop: '20px' }}>
         © {new Date().getFullYear()}<WebTitle></WebTitle>. All rights reserved.
       </Typography>
+      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+  <aside>
+    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+  </aside>
+</footer>
     </Container>
+
   );
 };
 

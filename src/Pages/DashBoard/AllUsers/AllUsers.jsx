@@ -16,7 +16,7 @@ const AllUsers = () => {
             return res.data;
         }
     })
-    const handleMakeUser=user=>{
+    const handleMakeAdmin=user=>{
         axiosSecure.patch(`/users/admin/${user._id}`)
         .then(res =>{
             console.log(res.data)
@@ -60,7 +60,7 @@ const AllUsers = () => {
                     <td>
        { user.role ==='admin' ?'admin' :
        
-       <button onClick={() => handleMakeUser(user)} className="btn btn-ghost btn-xs text-2xl"><FaUser></FaUser></button>}
+       <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost btn-xs text-2xl"><FaUser></FaUser></button>}
         </td>
        
                   </tr> )
