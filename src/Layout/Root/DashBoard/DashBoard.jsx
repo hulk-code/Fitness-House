@@ -32,6 +32,9 @@ const DashBoard = () => {
                         <NavLink to='/dashboard/addforum'>Add Forum</NavLink>
                         </li>
                     <li className="mb-3">
+                        <NavLink to='/dashboard/allPlan'>All Plan</NavLink>
+                        </li>
+                    <li className="mb-3">
                         <NavLink to='/dashboard/balance'>balance</NavLink>
                         </li>
                         </>

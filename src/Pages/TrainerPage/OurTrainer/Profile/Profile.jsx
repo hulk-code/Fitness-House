@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Profile = ({profile}) => {
     const { _id,name,profileImage,yearsOfExperience}=profile;
+    console.log(profile);
     return (
         <div >
             <div className="card card-compact w-96 bg-base-100 shadow-xl lg:mt-[300px]">

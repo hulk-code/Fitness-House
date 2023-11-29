@@ -31,6 +31,8 @@ import AddForum from "../Pages/DashBoard/AddForum/AddForum";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import UpdateProfile from "../Pages/DashBoard/UpdateProfile/UpdateProfile";
 import RecomandedClass from "../Pages/DashBoard/RecomandedClass/RecomandedClass";
+import Booking from "../Pages/TrainerPage/KnowMore/Booking";
+import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
 
 
 
@@ -62,6 +64,10 @@ import RecomandedClass from "../Pages/DashBoard/RecomandedClass/RecomandedClass"
           path: "/knowmore/:id",
           element:<KnowMore></KnowMore> ,
           loader:({params}) => fetch(`http://localhost:5000/instructorprofile/${params.id}`)
+        },
+        {
+          path:"/booking",
+          element:<Booking/>,
         },
         {
           path: "/beatrainer",
@@ -125,6 +131,7 @@ import RecomandedClass from "../Pages/DashBoard/RecomandedClass/RecomandedClass"
           {
             path: "activity",
             element:<UserActivity></UserActivity> ,
+
           },
           {
             path: "alltrainer",
@@ -143,7 +150,7 @@ import RecomandedClass from "../Pages/DashBoard/RecomandedClass/RecomandedClass"
             element:<AddForum></AddForum>
           },
           {
-            path: "payment/:id/:totalPay",
+            path: "payment/",
             element:<Payment></Payment>
           },
           {
@@ -156,6 +163,11 @@ import RecomandedClass from "../Pages/DashBoard/RecomandedClass/RecomandedClass"
             path: "Recommendedclasses",
             element:<RecomandedClass></RecomandedClass>
           },
+          {
+            path: "allplan",
+            element:<AllPlan></AllPlan>
+          },
+
 
          ]
 

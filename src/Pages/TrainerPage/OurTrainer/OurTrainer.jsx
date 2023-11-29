@@ -7,6 +7,7 @@ import Profile from "./Profile/Profile";
 const OurTrainer = () => {
     const axiousSecure=UseaxiosSecure()
     const[trainerProfile,setTrainerProfile]=useState([])
+    console.log(trainerProfile);
     useEffect(() => {
         axiousSecure.get('/instructorprofile')
             .then(res => {

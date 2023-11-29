@@ -1,94 +1,86 @@
-
-// import useAuth from "../../../Hook/UseAuth/UseAuth";
-// import { useState } from "react";
-
-// import { useEffect } from "react";
-// import UseaxiosSecure from "../../../Hook/UseAxiousSecure/UseaxiosSecure";
-
-
-// const UpdateProfile = () => {
-   
-//     const{user}=useAuth;
-//     const [allUser ,setAllUser] = useState([])
-//     const axiosSecure=UseaxiosSecure()
-//     useEffect(() => {
-//         axiosSecure.get('/users')
-//             .then(res => {
-//                 setAllUser(res.data)
-//                 // console.log(res.data);
-//             })
-//     }, [])
-//     const userData=allUser.find(users => users.email===user?.email)
-//     console.log(userData);
-//     return (
-//         <div>
-            
-//         </div>
-//     );
-// };
-
-// export default UpdateProfile;
 import useAuth from "../../../Hook/UseAuth/UseAuth";
 import { useState, useEffect } from "react";
 import UseaxiosSecure from "../../../Hook/UseAxiousSecure/UseaxiosSecure";
 import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
-    const { user } = useAuth();
-    const [allUser, setAllUser] = useState([]);
-    const axiosSecure = UseaxiosSecure();
-    const [inputValue, setInputValue] = useState('');
-console.log(inputValue);
-    useEffect(() => {
-        axiosSecure.get('/users')
-            .then(res => {
-                setAllUser(res.data);
-            })
-            .catch(error => {
-                console.error('Error fetching user data:', error);
-            });
-    }, []);
+  const { user } = useAuth();
+  const [allUser, setAllUser] = useState([]);
+  const axiosSecure = UseaxiosSecure();
+  const [inputValue, setInputValue] = useState('');
 
-    const userData = allUser.find(userData => userData.email === user?.email);
-
-    console.log(userData);
-
-    const handleUserProfile= userData =>{
-        
-       
-      axiosSecure.patch(`/users/${userData._id}`)
-      .then(res =>{
-          console.log(res.data)
-          if(res.data.modifiedCount >0){
-              
-              Swal.fire({
-                  position: "top-end",
-                  icon: "success",
-                  title:`${userData.name} admin created`,
-                  showConfirmButton: false,
-                  timer: 1500
-                });
-          }
+  useEffect(() => {
+    axiosSecure.get('/users')
+      .then(res => {
+        setAllUser(res.data);
       })
-      
-    }
+      .catch(error => {
+        console.error('Error fetching user data:', error);
+      });
+  }, []);
 
-    return (
-        <div>
-           
-           <input
+  const userData = allUser.find(userData => userData.email === user?.email);
+
+  const handleUserProfile = () => {
+    // Update the user information with the new name
+    const updatedUserData = { ...userData, name: inputValue };
+  
+    axiosSecure.put(`/users/${userData._id}`, { newName: inputValue })
+      .then(res => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          // Display a success message using SweetAlert
+          Swal.fire({
+            icon: 'success',
+            title: 'User profile updated successfully!',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error updating user profile',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        // Display an error message using SweetAlert
+        Swal.fire({
+          icon: 'error',
+          title: 'Error updating user profile',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      });
+  }
+
+  return (
+    <div>
+      <input
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Type here"
+        className="input input-bordered w-full max-w-xs"
       />
-            
-            <input   type="text" name='name' defaultValue={user.displayName} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-            <input readOnly defaultValue={user.email}  type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-            <button  onClick={() => handleUserProfile(userData)}  />update
-           
-          
-        </div>
-    );
+      <input
+        readOnly
+        defaultValue={user.email}
+        type="text"
+        placeholder="Type here"
+        className="input input-bordered w-full max-w-xs"
+      />
+      <button
+        className="btn btn-secondary"
+        onClick={handleUserProfile}
+      >
+        Update
+      </button>
+    </div>
+  );
 };
 
 export default UpdateProfile;
