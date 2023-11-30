@@ -7,6 +7,9 @@ import axios from "axios";
 import PostDetails from "./PostDetails/PostDetails";
 
 
+
+
+
 const Posts = () => {
   const [blogs, setBlogs] = useState([])
   const url = `http://localhost:5000/blogs`
@@ -19,6 +22,9 @@ const Posts = () => {
   return (
 
     <>
+    {/* <Helmet>
+        <title>Vitality Vault || Blogs</title>
+      </Helmet> */}
       <Sectiontitle heading='todays Blogs'></Sectiontitle>
       <div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto text-black">
         <div className="max-w-2xl">

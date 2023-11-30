@@ -4,6 +4,7 @@ import ClassTable from "./ClassTable/ClassTable";
 import { Link } from "react-router-dom";
 import UseAdmin from "../../Hook/UseAdmin/UseAdmin";
 import UserTrainer from "../../Hook/Usetrainer/UserTrainer";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -21,6 +22,9 @@ const OurClasses = () => {
     }, [])
     return (
         <div>
+            <Helmet>
+        <title>Vitality Vault || Classes</title>
+      </Helmet>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */} 

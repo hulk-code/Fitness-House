@@ -84,6 +84,8 @@ import { NavLink, Outlet } from "react-router-dom";
 import UseAdmin from "../../../Hook/UseAdmin/UseAdmin";
 import UserTrainer from "../../../Hook/Usetrainer/UserTrainer";
 import "./Dashboard.css"; // Import your custom styles
+import { Helmet } from "react-helmet-async";
+
 
 const DashBoard = () => {
     const [isAdmin] = UseAdmin();
@@ -91,6 +93,9 @@ const DashBoard = () => {
 
     return (
         <div className="flex">
+            <Helmet>
+        <title>Vitality Vault || DashBoard</title>
+      </Helmet>
             <div className="w-64 min-h-screen bg-orange-400">
                 <ul className="menu p-4 text-lg font-bold">
                     {isAdmin ? (
@@ -113,9 +118,9 @@ const DashBoard = () => {
                             <li className="menu-item">
                                 <NavLink to="/dashboard/addforum" className="menu-link">Add Forum</NavLink>
                             </li>
-                            <li className="menu-item">
+                            {/* <li className="menu-item">
                                 <NavLink to="/dashboard/allPlan" className="menu-link">All Plans</NavLink>
-                            </li>
+                            </li> */}
                             <li className="menu-item">
                                 <NavLink to="/dashboard/balance" className="menu-link">Balance</NavLink>
                             </li>
@@ -127,6 +132,9 @@ const DashBoard = () => {
                             </li>
                             <li className="menu-item">
                                 <NavLink to="/dashboard/addforum" className="menu-link">Add Forum</NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="/dashboard/allPlan" className="menu-link">All Plans</NavLink>
                             </li>
                         </>
                     ) : (

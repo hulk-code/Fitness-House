@@ -7,8 +7,10 @@ import Swal from 'sweetalert2'
 import './LoginPage.css'
 import useAuth from '../../../Hook/UseAuth/UseAuth';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
+    
    
     const { logIn } = useAuth()
     const navigate = useNavigate();
@@ -46,9 +48,9 @@ const Login = () => {
 
     return (
         <>
-            {/* <Helmet>
+            <Helmet>
                 <title>Bistro Boss | Login</title>
-            </Helmet> */}
+            </Helmet>
            <div className="hero min-h-screen " style={{ backgroundImage: 'url("https://i.ibb.co/hcNkC4Z/app-development-concept-with-flat-deisng-23-2147852845.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="hero-content  ">
                     <div className="">

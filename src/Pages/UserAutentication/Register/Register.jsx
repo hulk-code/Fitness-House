@@ -9,6 +9,8 @@ import AOS from 'aos';
 import useAuth from "../../../Hook/UseAuth/UseAuth";
 
 import useAxiosPublic from "../../../Hook/UseAxiousPublic/UseAxiousPublic";
+import { Helmet } from "react-helmet-async";
+
 
 
 
@@ -110,7 +112,9 @@ const Register = () => {
     }
   return (
     <div>
-     
+      <Helmet>
+        <title>Vitality Vault || Register</title>
+      </Helmet>
       <div className="hero min-h-screen bg-slate-300 md:bg-[url('https://i.ibb.co/2KLRVCT/regibg.png')]" data-aos="fade-up">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">

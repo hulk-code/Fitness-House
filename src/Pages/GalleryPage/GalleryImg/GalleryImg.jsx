@@ -5,6 +5,7 @@ import 'react-lazy-load-image-component/src/effects/opacity.css';
 import axios from 'axios';
 import { Grid, CircularProgress, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const InfiniteImageScroll = () => {
   const [images, setImages] = useState([]);
@@ -47,6 +48,10 @@ const InfiniteImageScroll = () => {
   };
 
   return (
+    <>
+   <Helmet>
+        <title>Vitality Vault || Gallery</title>
+      </Helmet>
     <InfiniteScroll
     dataLength={images.length}
     next={fetchMoreImages}
@@ -74,6 +79,7 @@ const InfiniteImageScroll = () => {
         ))}
       </Grid>
     </InfiniteScroll>
+    </>
   );
 };
 

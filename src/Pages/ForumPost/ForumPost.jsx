@@ -9,6 +9,7 @@
 import  { useState } from 'react';
 import { AiFillDislike, AiFillLike } from 'react-icons/ai';
 import useAuth from '../../Hook/UseAuth/UseAuth';
+import { Helmet } from 'react-helmet-async';
 
 const ForumPost = ({ product }) => {
     const {user}=useAuth()
@@ -34,6 +35,9 @@ const ForumPost = ({ product }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Vitality Vault || Forum</title>
+      </Helmet>
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{author}</h2>
