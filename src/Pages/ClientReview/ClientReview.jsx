@@ -14,7 +14,7 @@ import Sectiontitle from '../Home/SharedPage/SectionTitle/SectionTitle';
 
 const ClientReview = () => {
     const [reviews, setReviews] = useState([])
-    const url = `http://localhost:5000/reviews`
+    const url = `https://fitness-house-server-xi.vercel.app/reviews`
     useEffect(() => {
         axios.get(url)
             .then(res => {

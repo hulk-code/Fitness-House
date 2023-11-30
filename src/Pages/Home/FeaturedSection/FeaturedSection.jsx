@@ -9,7 +9,7 @@ import axios from "axios";
 
 const FeaturedSection = () => {
   const[featured ,setfeatured]=useState([])
-  const url=`http://localhost:5000/featured`
+  const url=`https://fitness-house-server-xi.vercel.app/featured`
   useEffect( () =>{
     axios.get(url)
     .then(res =>{

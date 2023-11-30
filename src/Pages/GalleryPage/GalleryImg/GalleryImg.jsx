@@ -16,7 +16,7 @@ const InfiniteImageScroll = () => {
     const fetchData = async () => {
       try {
        
-        const response = await axios.get('/public/data.json');
+        const response = await axios.get('https://fitness-house-server-xi.vercel.app/image');
 
        
         setImages(response.data.slice(0, 12));
@@ -33,7 +33,7 @@ const InfiniteImageScroll = () => {
   const fetchMoreImages = async () => {
     try {
      
-      const response = await axios.get('/public/data.json');
+      const response = await axios.get('https://fitness-house-server-xi.vercel.app/image');
 
      
       if (images.length + response.data.length >= 30) {

@@ -6,7 +6,7 @@ import Sectiontitle from "../Home/SharedPage/SectionTitle/SectionTitle";
 
 const Classes = () => {
     const[classes ,setClasses]=useState([])
-    const url=`http://localhost:5000/classes`
+    const url=`https://fitness-house-server-xi.vercel.app/classes`
     useEffect( () =>{
       axios.get(url)
       .then(res =>{

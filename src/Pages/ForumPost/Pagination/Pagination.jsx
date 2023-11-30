@@ -23,7 +23,7 @@ const Pagination = () => {
     console.log(pages)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/posts?page=${currentPage} &size=${itmesPerPage}`)
+        fetch(`https://fitness-house-server-xi.vercel.app/posts?page=${currentPage} &size=${itmesPerPage}`)
         
             .then(res => res.json())
             .then(data => setProducts(data))

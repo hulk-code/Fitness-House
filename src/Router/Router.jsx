@@ -50,7 +50,7 @@ import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
         {
           path: "/readmore/:id",
           element:<ReadMore></ReadMore>,
-          loader:({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
+          loader:({params}) => fetch(`https://fitness-house-server-xi.vercel.app/blogs/${params.id}`)
         },
         {
           path: "/galery",
@@ -63,7 +63,7 @@ import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
         {
           path: "/knowmore/:id",
           element:<KnowMore></KnowMore> ,
-          loader:({params}) => fetch(`http://localhost:5000/instructorprofile/${params.id}`)
+          loader:({params}) => fetch(`https://fitness-house-server-xi.vercel.app/instructorprofile/${params.id}`)
         },
         {
           path:"/booking",
@@ -88,7 +88,7 @@ import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
         {
           path:'/classdetails/:id',
           element:<ClassDetails></ClassDetails>,
-          loader:({params}) => fetch(`http://localhost:5000/routine/${params.id}`)
+          loader:({params}) => fetch(`https://fitness-house-server-xi.vercel.app/routine/${params.id}`)
         },
         {
           path: "/addclass",
@@ -102,7 +102,7 @@ import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
         {
           path: "/forums",
           element:<Pagination></Pagination>,
-          loader:()=>fetch('http://localhost:5000/postsCount')
+          loader:()=>fetch('https://fitness-house-server-xi.vercel.app/postsCount')
 
         },
        
@@ -156,7 +156,7 @@ import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
           {
             path: "updateprofile",
             element:<UpdateProfile></UpdateProfile>,
-            // loader:({params}) => fetch(`http://localhost:5000/users/${params.id}`)
+            // loader:({params}) => fetch(`https://fitness-house-server-xi.vercel.app/users/${params.id}`)
 
           },
           {

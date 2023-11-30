@@ -12,7 +12,7 @@ import PostDetails from "./PostDetails/PostDetails";
 
 const Posts = () => {
   const [blogs, setBlogs] = useState([])
-  const url = `http://localhost:5000/blogs`
+  const url = `https://fitness-house-server-xi.vercel.app/blogs`
   useEffect(() => {
     axios.get(url)
       .then(res => {
