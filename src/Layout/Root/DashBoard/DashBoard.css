@@ -1,0 +1,42 @@
+/* Dashboard.css */
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-link {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05); /* Add a scale effect on hover */
+}
+
+.menu-item:active {
+    transform: scale(0.95); /* Add a slight scale effect when item is clicked */
+}
+
+.divider {
+    height: 1px;
+    background-color: white;
+    margin: 1rem 0;
+}
+
+.menu-link:hover {
+    color: #ffd700; /* Change text color on hover */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Add text shadow on hover */
+}
+
+.menu-link:active {
+    color: #ff4500; /* Change text color when item is clicked */
+}

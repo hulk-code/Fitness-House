@@ -1,19 +1,23 @@
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Sectiontitle from "../../Home/SharedPage/SectionTitle/SectionTitle";
+import useAuth from "../../../Hook/UseAuth/UseAuth";
 
 const KnowMore = () => {
   const KnowMore = useLoaderData();
-
-  const navigate = useNavigate();
  
-
-
   return (
     <div className=" pt-32">
       <Sectiontitle heading={KnowMore.name}></Sectiontitle>
       <div className="flex justify-end mb-10 px-5 md:px-10">
         <Link to="/beatrainer">
-          <button className="btn btn-accent w-full">Be a trainer</button>
+        <button className="btn relative inline-flex items-center justify-start overflow-hidden transition-all bg-white rounded hover:bg-white group">
+
+{/* purple box */}
+<span className="w-0 h-0 rounded bg-purple-600 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
+<span className="w-full text-black transition-colors duration-300 ease-in-out group-hover:text-white z-10">
+ BE_A_TRAINER
+</span>
+</button>
         </Link>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-5 md:px-10 mb-16">

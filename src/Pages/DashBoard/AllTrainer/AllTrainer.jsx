@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import UseaxiosSecure from "../../../Hook/UseAxiousSecure/UseaxiosSecure";
+
+import AllTrainerCard from "./AllTrainerCard/AllTrainerCard";
 import Sectiontitle from "../../Home/SharedPage/SectionTitle/SectionTitle";
-import {   Link } from 'react-router-dom';
 
 
 const AllTrainer = () => {
@@ -9,9 +10,9 @@ const AllTrainer = () => {
     const axiosSecure = UseaxiosSecure()
   
 
-    const calculateTotalPay = (profile) => {
-        return profile.salary * profile.workingmonth;
-    };
+    // const calculateTotalPay = (profile) => {
+    //     return profile.salary * profile.workingmonth;
+    // };
     
     useEffect(() => {
         axiosSecure.get('/instructorprofile')
@@ -41,38 +42,8 @@ const AllTrainer = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        profiles.map(profile => <tr key={profile._id} className="odd:bg-white even:bg-gray-100 dark:odd:bg-slate-900 dark:even:bg-slate-800">
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                                <div className="avatar">
-                                                    <div className="w-12">
-                                                        <img src={profile.profileImage} />
-                                                    </div>
-                                                </div>
-                                            </td>
-
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{profile.name}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{profile.workingmonth}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{profile.salary}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"> {calculateTotalPay(profile)}</td>
-
-                                            <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                            <Link to={`/payment/${profile._id}/${calculateTotalPay(profile)}`} className="btn btn-circle">
-                Pay
-              </Link>
-
-
-                                            </td>
-                                        </tr>)
+                                        profiles.map(profile => <AllTrainerCard key={profile._id} profile={profile}></AllTrainerCard>)
                                     }
-
-
-
-
-
-
-
-
-
                                 </tbody>
                             </table>
                         </div>

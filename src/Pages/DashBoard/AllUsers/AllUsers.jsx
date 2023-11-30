@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseaxiosSecure from "../../../Hook/UseAxiousSecure/UseaxiosSecure";
 import { FaUser } from "react-icons/fa";
 import Swal from "sweetalert2";
+import Sectiontitle from "../../Home/SharedPage/SectionTitle/SectionTitle";
 
 
 
@@ -34,6 +35,7 @@ const AllUsers = () => {
      }
     return (
         <div>
+          <Sectiontitle heading='All User'></Sectiontitle>
             <div className="w-full mx-auto">
                 
                 <h2 className="text-3xl ">Total user:{users.length}</h2>
@@ -49,14 +51,14 @@ const AllUsers = () => {
               <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
               <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Email</th>
               <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">role</th>
-              <th scope="col" className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
+             
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {
                 users.map(user =><tr key={user._id}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{user.name}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">45</td>
+                    <td className="px-6 py-4 whitespace-nowrap font-bold text-sm text-gray-800">{user.name}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 ">{user?.email}</td>
                     <td>
        { user.role ==='admin' ?'admin' :
        

@@ -4,7 +4,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import Swal from 'sweetalert2'
-
+import './LoginPage.css'
 import useAuth from '../../../Hook/UseAuth/UseAuth';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -49,13 +49,13 @@ const Login = () => {
             {/* <Helmet>
                 <title>Bistro Boss | Login</title>
             </Helmet> */}
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col md:flex-row-reverse">
-                    <div className="text-center md:w-1/2 lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+           <div className="hero min-h-screen " style={{ backgroundImage: 'url("https://i.ibb.co/hcNkC4Z/app-development-concept-with-flat-deisng-23-2147852845.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="hero-content  ">
+                    <div className="">
+                        <h1 className="text-5xl font-bold text-orange-300">Login now!</h1>
                        
                     </div>
-                    <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+                    <div className="card  lg:w-full shadow-2xl ">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -75,10 +75,10 @@ const Login = () => {
                            
                             <div className="form-control mt-6">
                                
-                                <input  className="btn btn-primary" type="submit" value="Login" />
+                                <input  className="btn btn-primary text-md font-bold" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className='px-6'><small>New Here? <Link to="/register">Create an account</Link> </small></p>
+                        <p className='px-6 text-slate-950 font-bold text-xl'><small>New Here? <Link to="/register">Create an account</Link> </small></p>
                         <SocialLogin></SocialLogin>
                     </div>
                 </div>

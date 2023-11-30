@@ -67,7 +67,7 @@ import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
         },
         {
           path:"/booking",
-          element:<Booking/>,
+          element:<PrivateRoute><Booking/></PrivateRoute>,
         },
         {
           path: "/beatrainer",
@@ -167,7 +167,7 @@ import AllPlan from "../Pages/DashBoard/AllPlan/AllPlan";
             path: "allplan",
             element:<AllPlan></AllPlan>
           },
-
+        
 
          ]
 

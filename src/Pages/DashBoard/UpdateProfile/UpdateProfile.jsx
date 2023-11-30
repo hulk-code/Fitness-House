@@ -2,6 +2,7 @@ import useAuth from "../../../Hook/UseAuth/UseAuth";
 import { useState, useEffect } from "react";
 import UseaxiosSecure from "../../../Hook/UseAxiousSecure/UseaxiosSecure";
 import Swal from "sweetalert2";
+import Sectiontitle from "../../Home/SharedPage/SectionTitle/SectionTitle";
 
 const UpdateProfile = () => {
   const { user } = useAuth();
@@ -58,28 +59,30 @@ const UpdateProfile = () => {
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Type here"
-        className="input input-bordered w-full max-w-xs"
-      />
-      <input
-        readOnly
-        defaultValue={user.email}
-        type="text"
-        placeholder="Type here"
-        className="input input-bordered w-full max-w-xs"
-      />
-      <button
-        className="btn btn-secondary"
-        onClick={handleUserProfile}
-      >
-        Update
-      </button>
-    </div>
+    <div className="flex flex-col gap-4 my-10 mx-10 max-w-xs w-full">
+      <Sectiontitle heading='Update Your Profile'></Sectiontitle>
+  <input
+    type="text"
+    value={inputValue}
+    onChange={(e) => setInputValue(e.target.value)}
+    placeholder="Type here"
+    className="input input-bordered"
+  />
+  <input
+    readOnly
+    defaultValue={user.email}
+    type="text"
+    placeholder="Type here"
+    className="input input-bordered"
+  />
+  <button
+     className="btn btn-secondary hover:bg-gray-700 hover:text-white"
+    onClick={handleUserProfile}
+  >
+    Update
+  </button>
+</div>
+
   );
 };
 
